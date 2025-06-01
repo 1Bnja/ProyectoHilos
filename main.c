@@ -82,7 +82,7 @@ Cola cola_especialista[4];
 PersonalAdmin personal_admin[MAX_ADMIN];
 Medico medicos[MAX_MEDICOS];
 
-int num_admin = 2;
+int num_admin = 4; // Cambiado de 2 a 4
 int num_medicos_general = 4;
 int num_enfermeras = 2;
 int num_especialistas = 2;
@@ -520,8 +520,12 @@ void* monitor_sistema(void* arg) {
                total_pacientes_atendidos, total_pacientes_abandonaron);
         
         printf("Personal administrativo activos: %d/%d - ", admin_activos, num_admin);
-        for (int i = 0; i < admin_activos; i++) {
-            printf("%s%d", (i > 0) ? ", " : "", personal_admin[i].ocupado);
+        for (int i = 0; i < num_admin; i++) {
+            if (i < admin_activos) {
+                printf("%s%d", (i > 0) ? ", " : "", personal_admin[i].ocupado);
+            } else {
+                printf("%s0", (i > 0) ? ", " : ""); // Inactivo
+            }
         }
         printf("\n");
         
@@ -584,7 +588,7 @@ void generar_reporte() {
     }
     
     fprintf(archivo, "PERSONAL ADMINISTRATIVO:\n");
-    for (int i = 0; i < num_admin; i++) {
+    for (int i = 0; i < MAX_ADMIN; i++) {
         fprintf(archivo, "- Admin %d: %d pacientes clasificados %s\n", 
                 personal_admin[i].id, personal_admin[i].pacientes_clasificados,
                 (i < admin_activos) ? "(activo)" : "(inactivo al final)");
@@ -651,8 +655,8 @@ int main(int argc, char* argv[]) {
         init_cola(&cola_especialista[i]);
     }
     
-    // Inicializar personal administrativo
-    for (int i = 0; i < num_admin; i++) {
+    // Inicializar personal administrativo (crear los 4 hilos)
+    for (int i = 0; i < MAX_ADMIN; i++) {
         personal_admin[i].id = i + 1;
         personal_admin[i].ocupado = 0;
         personal_admin[i].pacientes_clasificados = 0;
