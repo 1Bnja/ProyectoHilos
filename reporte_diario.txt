@@ -1,0 +1,39 @@
+REPORTE DIARIO DE ATENCIÓN MÉDICA
+Fecha: Sat May 31 23:41:35 2025
+Factor de velocidad utilizado: x10
+Duración real: 190 segundos (0:03:10)
+Duración simulada: 1900 segundos (0:31:40)
+================================
+
+RESUMEN GENERAL:
+- Pacientes generados: 81
+- Pacientes clasificados: 31
+- Pacientes atendidos: 10
+- Pacientes que abandonaron: 0
+- Pacientes no contabilizados (en recepción): 48
+- Pacientes sin atención (clasificados, no atendidos): 14
+
+- Eficiencia del sistema: 12.35%
+
+PERSONAL ADMINISTRATIVO:
+- Admin 1: 14 pacientes clasificados (activo)
+- Admin 2: 17 pacientes clasificados (activo)
+
+PERSONAL MÉDICO:
+- Médico General 1: 2 pacientes atendidos
+- Médico General 2: 2 pacientes atendidos
+- Médico General 3: 2 pacientes atendidos
+- Médico General 4: 2 pacientes atendidos
+- Enfermera 1: 1 pacientes atendidos
+- Enfermera 2: 1 pacientes atendidos
+- Especialista Neurología 1: 0 pacientes atendidos
+- Especialista Neurología 2: 0 pacientes atendidos
+
+COLAS AL FINAL DE LA JORNADA:
+- En recepción: 48 pacientes
+- Esperando médico general: 8 pacientes
+- Esperando enfermería: 1 pacientes
+- Esperando Cardiología: 1 pacientes
+- Esperando Neurología: 0 pacientes
+- Esperando Pediatría: 0 pacientes
+- Esperando Dermatología: 4 pacientes
